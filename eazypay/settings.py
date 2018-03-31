@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'tendereza.apps.payments',
+    'eazypay.apps.payments',
     'rest_framework',
     'corsheaders',
 ]
@@ -43,7 +43,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'tendereza.urls'
+ROOT_URLCONF = 'eazypay.urls'
 
 TEMPLATES = [
     {
@@ -61,7 +61,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tendereza.wsgi.application'
+WSGI_APPLICATION = 'eazypay.wsgi.application'
 
 DATABASES = {
     "default": {
