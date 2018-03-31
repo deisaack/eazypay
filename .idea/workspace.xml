@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79f80af7-8c96-4a0d-83c6-8a77109edb46" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/tendereza.iml" afterPath="$PROJECT_DIR$/.idea/tendereza.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/eazypay/apps/payments/admin.py" afterPath="$PROJECT_DIR$/eazypay/apps/payments/admin.py" />
-      <change beforePath="$PROJECT_DIR$/eazypay/apps/payments/models.py" afterPath="$PROJECT_DIR$/eazypay/apps/payments/models.py" />
-      <change beforePath="$PROJECT_DIR$/eazypay/apps/payments/views.py" afterPath="$PROJECT_DIR$/eazypay/apps/payments/views.py" />
-      <change beforePath="$PROJECT_DIR$/eazypay/settings.py" afterPath="$PROJECT_DIR$/eazypay/settings.py" />
-      <change beforePath="$PROJECT_DIR$/eazypay/urls.py" afterPath="$PROJECT_DIR$/eazypay/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +18,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.77436686">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/eazypay/apps/payments/views.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="603">
@@ -34,6 +26,16 @@
                   <folding>
                     <element signature="e#0#100#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1134">
+                  <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -113,6 +115,7 @@
         <option value="$PROJECT_DIR$/eazypay/settings.py" />
         <option value="$PROJECT_DIR$/eazypay/apps/payments/models.py" />
         <option value="$PROJECT_DIR$/eazypay/apps/payments/views.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -439,6 +442,14 @@
           <folding>
             <element signature="e#0#100#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1134">
+          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
