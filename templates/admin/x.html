@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>AppDeck</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<!-- AppDeck API -->
+	<script type="text/javascript" src="//appdata.static.appdeck.mobi/js/fastclick.js"></script>
+	<script type="text/javascript" src="//appdata.static.appdeck.mobi/js/appdeck.js"></script>
+
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="/js/jquery.cookie.js"></script>
+
+
+
+<body>
+
+<div data-role="page" data-theme="a">
+
+	<div data-role="content">
+
+<h1>Info</h1>
+
+<h4>From CSS</h4>
+
+<style>
+
+.tester-css { background-color: red; }
+.appdeck_ios #ios-css { background-color: green; }
+.appdeck_android #android-css { background-color: green; }
+.appdeck_phone #phone-css { background-color: green; }
+.appdeck_tablet #tablet-css { background-color: green; }
+.appdeck_landscape #landscape-css { background-color: green; }
+.appdeck_portrait #portrait-css { background-color: green; }
+
+</style>
+
+<div class="tester-css">
+	<div id="ios-css">.appdeck_ios</div>
+	<div id="android-css">.appdeck_android</div>
+	<div id="phone-css">.appdeck_phone</div>
+	<div id="tablet-css">.appdeck_tablet</div>
+	<div id="landscape-css">.appdeck_landscape</div>
+	<div id="portrait-css">.appdeck_portrait</div>
+</div>
+
+<h4>From JS</h4>
+
+<script type="text/javascript">
+
+function refeshInfo()
+{
+	$('#ios-js').css('background-color', (app.info.isIOS() ? 'green' : 'red'));
+	$('#android-js').css('background-color', (app.info.isAndroid() ? 'green' : 'red'));
+	$('#phone-js').css('background-color', (app.info.isPhone() ? 'green' : 'red'));
+	$('#tablet-js').css('background-color', (app.info.isTablet() ? 'green' : 'red'));
+	$('#landscape-js').css('background-color', (app.info.isLandscape() ? 'green' : 'red'));
+	$('#portrait-js').css('background-color', (app.info.isPortrait() ? 'green' : 'red'));
+}
+
+$(document).ready(function() {
+
+	setInterval("refeshInfo()", 1000);
+
+});
+
+</script>
+
+<div class="tester-js">
+	<div id="ios-js">.appdeck_ios</div>
+	<div id="android-js">.appdeck_android</div>
+	<div id="phone-js">.appdeck_phone</div>
+	<div id="tablet-js">.appdeck_tablet</div>
+	<div id="landscape-js">.appdeck_landscape</div>
+	<div id="portrait-js">.appdeck_portrait</div>
+</div>
+
+
+
+	</div><!-- /content -->
+
+</div>
+
+</body>
+</html>
