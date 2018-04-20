@@ -4,16 +4,17 @@ from datetime import timedelta
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+LIVE_DIR= os.path.dirname(BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'j(n0=muw%)%jz))9am#i8dpat12#ja^_*(3tw8t$1fcp203lrp'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', False)
 
 ALLOWED_HOSTS = ['*']
 
@@ -29,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'eazypay.apps.payments',
+    'eazypay.apps.traffic',
     'rest_framework',
     'corsheaders',
 ]
@@ -41,6 +43,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'eazypay.apps.traffic.middleware.LogTrafic',
 ]
 
 ROOT_URLCONF = 'eazypay.urls'
@@ -95,7 +98,7 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
     ),
     'DEFAULT_PARSER_CLASSES': (
-        'rest_framework.parsers.JSONParser',
+        'rest_framework_xml.parsers.XMLParser',
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 25
@@ -151,12 +154,16 @@ CORS_ALLOW_HEADERS = (
     'x-requested-with',
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'pkemey@gmail.com'
-EMAIL_HOST_PASSWORD = 'Jacktone1'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "SAFI <"+config('EMAIL_HOST_USER')+">"
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST=config('EMAIL_HOST')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_PORT=config('EMAIL_PORT')
+EMAIL_USE_TLS=config('EMAIL_USE_TLS', True)
+SERVER_EMAIL=config('EMAIL_HOST')
+
+GEOIP_PATH = os.path.join(BASE_DIR, 'eazypay/utilities/geo')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'live/static')
 MEDIA_URL = '/media/'
@@ -165,3 +172,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "live", "media")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(LIVE_DIR, 'live/media')
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(LIVE_DIR, 'live/static')
+
