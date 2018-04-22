@@ -8,6 +8,7 @@ router.register('payment', views.PaymentViewset, base_name='payment')
 app_name = 'payments'
 
 urlpatterns = [
-    path('EazypayEndpoint/', views.receive_paument, name='receive_payment')
+    path('CheckPayment/<str:transaction_ref_no>/', views.check_payment, name='check_payment'),
+    path('EazypayEndpoint/', views.receive_payment, name='receive_payment')
 ]
 urlpatterns+=router.urls

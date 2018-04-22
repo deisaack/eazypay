@@ -14,6 +14,9 @@ import json
 from datetime import date, datetime
 from rest_framework import status
 from rest_framework import viewsets
+import logging
+
+# logger = logging.getLogger('__name__')
 
 
 def json_serial(obj):
@@ -45,7 +48,7 @@ responce_template ="""
 @api_view(('POST',))
 @parser_classes((XMLParser,))
 @renderer_classes((XMLRenderer,))
-def receive_paument(request):
+def receive_payment(request):
     try:
         data = json.dumps(request.data, default=json_serial)
     except Exception:
@@ -79,3 +82,18 @@ def receive_paument(request):
         return HttpResponse(resp, status=status.HTTP_400_BAD_REQUEST)
     resp = responce_template.format(code='000', reff_no=payment.transaction_ref_no)
     return HttpResponse(resp)
+
+
+@api_view(('GET',))
+@parser_classes((XMLParser,))
+@renderer_classes((XMLRenderer,))
+def check_payment(request, transaction_ref_no):
+    try:
+        payment=Payment.objects.get(transaction_ref_no__iexact=transaction_ref_no)
+    except Payment.DoesNotExist as e:
+        resp = responce_template.format(code='000', reff_no=transaction_ref_no)
+        return HttpResponse(resp, status=status.HTTP_404_NOT_FOUND)
+
+    serializer=sz.PaymentSerializer(payment)
+    return Response(serializer.data)
+
