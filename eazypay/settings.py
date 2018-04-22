@@ -210,6 +210,13 @@ LOGGING = {
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
+        'sentry': {
+            'level': 'ERROR', # To capture more than ERROR, change to WARNING, INFO, etc.
+            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
+            'tags': {'custom-tag': 'x'},
+            'filters': ['require_debug_false'],
+            'formatter': 'verbose',
+        },
         'console': {
             'level': 'DEBUG',
             'filters': ['require_debug_true'],
@@ -253,6 +260,16 @@ LOGGING = {
         '': {
             'handlers': ['console', 'production_file', 'debug_file'],
             'level': "DEBUG",
+        },
+        'raven': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
+        },
+        'sentry.errors': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
         },
     }
 }
