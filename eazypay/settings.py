@@ -181,7 +181,7 @@ RAVEN_CONFIG = {
     'dsn': 'https://32c4ef1a76b34582b7aa9bbf09e499f6:f8c0c222395c452d8e81875f52e28f0b@sentry.io/1193729',
     # If you are using git, you can also automatically configure the
     # release based on the git info.
-    'release': raven.fetch_git_sha(os.path.abspath(os.pardir)),
+    'release': raven.fetch_git_sha(os.path.join(BASE_DIR)),
 }
 
 LOGGING = {
