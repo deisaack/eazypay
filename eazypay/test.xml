@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <count>3</count>
+    <next></next>
+    <previous></previous>
+    <results>
+        <list-item>
+            <id>19</id>
+            <mobile_number>254765555012</mobile_number>
+            <amount>100.00</amount>
+            <till_number>254766999904</till_number>
+            <timestamp>2016-11-28T11:42:30+03:00</timestamp>
+            <transaction_ref_no>1234566</transaction_ref_no>
+            <served_by>1234</served_by>
+            <customer_name></customer_name>
+            <additional_info>['additionalInfo']</additional_info>
+            <created>2018-03-31T13:03:40.852874+03:00</created>
+            <updated>2018-03-31T13:03:40.852901+03:00</updated>
+        </list-item>
+        <list-item>
+            <id>23</id>
+            <mobile_number>254765955012</mobile_number>
+            <amount>100.00</amount>
+            <till_number>254766999904</till_number>
+            <timestamp>2016-11-28T11:42:30+03:00</timestamp>
+            <transaction_ref_no>12345663</transaction_ref_no>
+            <served_by>1234</served_by>
+            <customer_name></customer_name>
+            <additional_info>['additionalInfo']</additional_info>
+            <created>2018-03-31T13:19:41.956659+03:00</created>
+            <updated>2018-03-31T13:19:41.956683+03:00</updated>
+        </list-item>
+        <list-item>
+            <id>27</id>
+            <mobile_number>200</mobile_number>
+            <amount>100.00</amount>
+            <till_number>100</till_number>
+            <timestamp>2016-11-28T11:42:30+03:00</timestamp>
+            <transaction_ref_no>M0p</transaction_ref_no>
+            <served_by>1234</served_by>
+            <customer_name></customer_name>
+            <additional_info>test trxn</additional_info>
+            <created>2018-04-22T13:50:44.026573+03:00</created>
+            <updated>2018-04-22T13:50:44.026591+03:00</updated>
+        </list-item>
+    </results>
+</root>

@@ -27,7 +27,7 @@ def json_serial(obj):
     raise TypeError ("Type %s not serializable" % type(obj))
 
 # from rest_framework.parsers import
-class PaymentViewset(viewsets.ModelViewSet):
+class PaymentViewset(viewsets.ReadOnlyModelViewSet):
     queryset = Payment.objects.all()
     serializer_class = sz.PaymentSerializer
     # filter_backends =
