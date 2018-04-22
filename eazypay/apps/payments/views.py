@@ -13,6 +13,8 @@ from django.http import HttpResponse
 import json
 from datetime import date, datetime
 from rest_framework import status
+from rest_framework import viewsets
+
 
 def json_serial(obj):
     """JSON serializer for objects not serializable by default json code"""
@@ -70,7 +72,7 @@ def receive_paument(request):
             mobile_number = valid_data['mobileNumber'],
             transaction_ref_no = valid_data['transactionRefNo'],
             served_by=valid_data['servedBy'],
-            additional_info=['additionalInfo']
+            additional_info=valid_data['additionalInfo']
         )
     except IntegrityError as e:
         resp = responce_template.format(code='555', reff_no='A similar transaction already exists')

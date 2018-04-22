@@ -33,3 +33,4 @@ class LogTrafic(object):
         if jwt_authentication.get_jwt_value(request):
             user, jwt = jwt_authentication.authenticate(request)
         return user
+
